@@ -84,6 +84,17 @@ map("n", "gh", "^", { desc = "Go to start of line" })
 map("n", "<A-h>", "^", { desc = "Go to start of line", silent = true })
 map("n", "<A-l>", "$", { desc = "Go to end of line", silent = true })
 
+-- Moving in Insert Mode
+map("i", "<A-h>", "<C-o>h", { desc = "Go Left in Insert Mode", silent = true })
+map("i", "<A-j>", "<C-o>j", { desc = "Go Down in Insert Mode", silent = true })
+map("i", "<A-k>", "<C-o>k", { desc = "Go Up in Insert Mode", silent = true })
+map("i", "<A-l>", "<C-o>l", { desc = "Go Right in Insert Mode", silent = true })
+map("i", "<A-q>", "<C-o>^", { desc = "Go to start of line", silent = true })
+map("i", "<A-p>", "<C-o>$", { desc = "Go to end of line", silent = true })
+
+-- Exit Insert Mode
+map("i", "zjk", "<ESC>", { desc = "Exit Insert Mode" })
+
 -- Select all content
 map("n", "==", "gg<S-v>G")
 map("n", "<A-a>", "ggVG", { noremap = true, silent = true, desc = "Select all" })
@@ -120,12 +131,12 @@ map("i", ".", ".<c-g>u")
 map("i", ";", ";<c-g>u")
 
 -- Auto-close pairs (simple, no plugin needed)
-map("i", "`", "``<left>")
-map("i", '"', '""<left>')
+-- map("i", "`", "``<left>")
+-- map("i", '"', '""<left>')
 map("i", "(", "()<left>")
 map("i", "[", "[]<left>")
 map("i", "{", "{}<left>")
-map("i", "<", "<><left>")
+-- map("i", "<", "<><left>")
 -- Note: Single quotes commented out to avoid conflicts in some contexts
 -- map("i", "'", "''<left>")
 
@@ -135,6 +146,7 @@ map("i", "<", "<><left>")
 
 -- Save file (works in all modes)
 map({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save File" })
+map("n", "<leader>ww", "<cmd>w<cr><esc>", { desc = "Save File" })
 
 -- Create new file
 map("n", "<leader>fn", "<cmd>enew<cr>", { desc = "New File" })
@@ -142,13 +154,16 @@ map("n", "<leader>fn", "<cmd>enew<cr>", { desc = "New File" })
 -- Quit operations
 map("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit All" })
 
+-- Go to Ex Mode
+map("n", "<leader>fj", "<CMD>Ex<CR>", { desc = "Open Ex Neovim" })
+
 -- ═══════════════════════════════════════════════════════════
 -- DEVELOPMENT TOOLS
 -- ═══════════════════════════════════════════════════════════
 
 -- Commenting (add comment above/below current line)
 map("n", "gco", "o<esc>Vcx<esc><cmd>normal gcc<cr>fxa<bs>", { desc = "Add Comment Below" })
-map("n", "gcO", "O<esc>Vcx<esc><cmd>normal gcc<cr>fxa<bs>", { desc = "Add Comment Above" })
+map("n", "gca", "O<esc>Vcx<esc><cmd>normal gcc<cr>fxa<bs>", { desc = "Add Comment Above" })
 
 -- Quickfix and location lists
 map("n", "<leader>xl", function()
