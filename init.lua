@@ -2,4 +2,7 @@ vim.g.mapleader = ","
 vim.g.maplocalleader = ","
 
 -- Entry point for Neovim configuration
-require("config")
+require "config"
+require "plugins"
+
+require "config.lsp"

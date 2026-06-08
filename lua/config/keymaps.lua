@@ -152,7 +152,8 @@ map("n", "<leader>ww", "<cmd>w<cr><esc>", { desc = "Save File" })
 map("n", "<leader>fn", "<cmd>enew<cr>", { desc = "New File" })
 
 -- Quit operations
-map("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit All" })
+map("n", "<leader>qa", "<cmd>qa<cr>", { desc = "Quit All" })
+map("n", "<leader>qq", "<cmd>q<cr>", { desc = "Quit Current Buffer" })
 
 -- Go to Ex Mode
 map("n", "<leader>fj", "<CMD>Ex<CR>", { desc = "Open Ex Neovim" })
@@ -235,3 +236,13 @@ map("n", "<leader>tw", "<cmd>set wrap!<CR>", { desc = "Toggle Wrap", silent = tr
 
 -- Fix spelling (picks first suggestion)
 map("n", "z0", "1z=", { desc = "Fix word under cursor" })
+
+-- ═══════════════════════════════════════════════════════════
+-- PACKAGE SHORTCUTS
+-- ═══════════════════════════════════════════════════════════
+
+-- Update packages
+map("n", "<leader>pu", "<cmd>lua vim.pack.update()<CR>")
+
+-- Open Mason UI
+map("n", "<leader>ma", "<cmd>Mason<CR>")
