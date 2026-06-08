@@ -1,2 +1,4 @@
 require("plugins.mason")
 require("plugins.roslyn-nvim")
+require("plugins.autopairs")
+require("plugins.whichkey")
