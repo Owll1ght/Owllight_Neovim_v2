@@ -15,9 +15,20 @@ require("mason").setup({
 require("mason-lspconfig").setup()
 
 require("mason-tool-installer").setup({
-  ensure_installed = {
-    "lua_ls",
-    "roslyn",
-    "clangd",
+    ensure_installed = {
+      -- lsp
+      "lua_ls",
+      "roslyn",
+      "clangd",
+
+      -- formatter
+      "stylua",
+      "biome",
+      "prettier",
+      "taplo",
+      "black",
+      "goimports",
+      "clang-format",
+      "csharpier",
   },
 })
