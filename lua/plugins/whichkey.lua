@@ -9,6 +9,7 @@ whichkey.setup({
 
 whichkey.add({
     { "<leader><tab>", group = "tabs" },
+    { "<leader>l", group = "colorscheme theme" },
     { "<leader>c", group = "code" },
     { "<leader>d", group = "debug" },
     { "<leader>D", group = "Diffview", icon = { icon = "", color = "orange" } },

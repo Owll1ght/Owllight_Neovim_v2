@@ -111,6 +111,8 @@ map("n", "N", "'nN'[v:searchforward].'zv'", { expr = true, desc = "Prev Search R
 map("x", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev Search Result" })
 map("o", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev Search Result" })
 
+-- Open Up Warning Windows
+map("n", "gb", "<cmd>lua vim.diagnostic.open_float()<cr>", { desc = "Open Warning Float Window" })
 -- ═══════════════════════════════════════════════════════════
 -- SMART TEXT EDITING
 -- ═══════════════════════════════════════════════════════════
