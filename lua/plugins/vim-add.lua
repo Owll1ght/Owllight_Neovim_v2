@@ -1,0 +1,32 @@
+vim.pack.add({
+	"https://github.com/windwp/nvim-autopairs",
+	"https://github.com/windwp/nvim-ts-autotag",
+	{
+		src = "https://github.com/saghen/blink.cmp",
+		version = vim.version.range("^1"),
+	},
+	"https://github.com/rebelot/kanagawa.nvim",
+	"https://github.com/stevearc/conform.nvim",
+	"https://github.com/mfussenegger/nvim-dap",
+	"https://github.com/rcarriga/nvim-dap-ui",
+	"https://github.com/nvim-neotest/nvim-nio",
+	"https://github.com/theHamsta/nvim-dap-virtual-text",
+	"https://github.com/lewis6991/gitsigns.nvim",
+	"https://github.com/sindrets/diffview.nvim",
+	"https://github.com/neovim/nvim-lspconfig",
+	"https://github.com/mason-org/mason.nvim",
+	"https://github.com/mason-org/mason-lspconfig.nvim",
+	"https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim",
+	"https://github.com/seblyng/roslyn.nvim.git",
+	"https://github.com/folke/snacks.nvim",
+	"https://github.com/nvim-tree/nvim-web-devicons",
+	{
+		src = "https://github.com/nvim-treesitter/nvim-treesitter",
+		version = "main",
+	},
+	{
+		src = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects",
+		version = "main",
+	},
+	"https://github.com/folke/which-key.nvim",
+})

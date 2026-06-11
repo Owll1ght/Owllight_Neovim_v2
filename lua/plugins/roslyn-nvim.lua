@@ -1,7 +1,5 @@
 -- ~/.config/nvim/lua/plugins/roslyn-nvim.lua
 
-vim.pack.add({ "https://github.com/seblyng/roslyn.nvim.git" })
-
 local conf = require("roslyn")
 
 require("roslyn").setup({

@@ -1,3 +1,4 @@
+require("plugins.vim-add")
 require("plugins.mason")
 require("plugins.roslyn-nvim")
 require("plugins.treesitter")

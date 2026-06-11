@@ -1,8 +1,3 @@
-vim.pack.add({
-	"https://github.com/windwp/nvim-autopairs",
-	"https://github.com/windwp/nvim-ts-autotag",
-})
-
 local group = vim.api.nvim_create_augroup("NvimAutopairsLazyLoad", { clear = true })
 
 vim.api.nvim_create_autocmd("InsertEnter", {
