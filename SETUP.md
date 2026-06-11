@@ -15,28 +15,21 @@ What to install for everyday usage :
 
 In Fedora :
 sudo dnf install git gcc fd ripgrep tree-sitter-cli dotnet-sdk-10.0 cargo clang go luarocks rustfmt
-
 sudo cargo install tree-sitter-cli
 
-Additional Download for minimizing warnings and errors in :checkhealth
+Additional Download for minimizing warnings and errors in :checkhealth :
 
-In Fedora :
 sudo dnf upgrade --refresh
-
 sudo dnf install magick ruby gem java javac julia php composer python3-pip python3-wheel gs pdflatex sqlite3
-
 sudo dnf copr enable dejan/lazygit
-
 sudo dnf install lazygit
 
 pip install mmdc
-
 pip3 install --user --upgrade pynvim
 
 For Windows :
 winget install Neovim.Neovim
 winget install --id Git.Git -e --source winget
-winget install -e --id BrechtSanders.WinLibs.POSIX.UCRT
 winget install -e --id BurntSushi.ripgrep.MSVC
 winget install sharkdp.fd
 winget install -e --id LLVM.LLVM
@@ -50,13 +43,13 @@ cargo install tree-sitter-cli
 
 To Install Scoop :
 Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
-
 If encounter error in scoop installer :
 Set-ExecutionPolicy RemoteSigned -scope CurrentUser
 
 scoop bucket add main
 scoop install luarocks
 scoop install ruby
+scoop install nodejs
 
 winget install julia -s msstore
 winget install PHP.PHP.8.5
