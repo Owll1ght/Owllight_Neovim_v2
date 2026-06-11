@@ -1,8 +1,19 @@
 What to install for everyday usage :
 
+- git
+- gcc
 - Ripgrep
 - fd
+- clang (for cargo)
+- cargo
 - tree-sitter-cli (from cargo)
+- Nerd Fonts
+- .net sdk for c#
+
+In Fedora :
+sudo dnf install git gcc fd ripgrep tree-sitter-cli dotnet-sdk-10.0 cargo clang
+
+sudo cargo install tree-sitter-cli
 
 Additional Download for minimizing warnings and errors in :checkhealth
 
