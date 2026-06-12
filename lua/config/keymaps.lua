@@ -249,7 +249,7 @@ map("n", "z0", "1z=", { desc = "Fix word under cursor" })
 -- ═══════════════════════════════════════════════════════════
 
 -- Update packages
-map("n", "<leader>pu", "<cmd>lua vim.pack.update()<CR>")
+map("n", "<leader>a", "<cmd>lua vim.pack.update()<CR>")
 
 -- Open Mason UI
 map("n", "<leader>ma", "<cmd>Mason<CR>")
