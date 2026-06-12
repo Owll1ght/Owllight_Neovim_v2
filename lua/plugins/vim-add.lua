@@ -1,32 +1,86 @@
 vim.pack.add({
-	"https://github.com/windwp/nvim-autopairs",
-	"https://github.com/windwp/nvim-ts-autotag",
+	{
+        src = "https://github.com/windwp/nvim-autopairs",
+        version = "7b9923abad60b903ece7c52940e1321d39eccc79",
+    },
+    {
+        src = "https://github.com/windwp/nvim-ts-autotag",
+        version = "88c1453db4ba7dd24131086fe51fdf74e587d275",
+    },
 	{
 		src = "https://github.com/saghen/blink.cmp",
 		version = vim.version.range("^1"),
 	},
-	"https://github.com/rebelot/kanagawa.nvim",
-	"https://github.com/stevearc/conform.nvim",
-	"https://github.com/mfussenegger/nvim-dap",
-	"https://github.com/rcarriga/nvim-dap-ui",
-	"https://github.com/nvim-neotest/nvim-nio",
-	"https://github.com/theHamsta/nvim-dap-virtual-text",
-	"https://github.com/lewis6991/gitsigns.nvim",
-	"https://github.com/sindrets/diffview.nvim",
-	"https://github.com/neovim/nvim-lspconfig",
-	"https://github.com/mason-org/mason.nvim",
-	"https://github.com/mason-org/mason-lspconfig.nvim",
-	"https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim",
-	"https://github.com/seblyng/roslyn.nvim.git",
-	"https://github.com/folke/snacks.nvim",
-	"https://github.com/nvim-tree/nvim-web-devicons",
+	{
+        src = "https://github.com/rebelot/kanagawa.nvim",
+        version = 'master',
+    },
+	{
+        src = "https://github.com/stevearc/conform.nvim",
+        version = "619363c30309d29ffa631e67c8183f2a72caa373",
+    },
+	{
+        src = "https://github.com/mfussenegger/nvim-dap",
+        version = "531771530d4f82ad2d21e436e3cc052d68d7aebb",
+    },
+    {
+        src = "https://github.com/rcarriga/nvim-dap-ui",
+        version = "d9770a55188bb34c2bdce7d90a6151181beb6966",
+    },
+	{
+        src = "https://github.com/nvim-neotest/nvim-nio",
+        version = "21f5324bfac14e22ba26553caf69ec76ae8a7662",
+    },
+	{
+        src = "https://github.com/theHamsta/nvim-dap-virtual-text",
+        version = "fbdb48c2ed45f4a8293d0d483f7730d24467ccb6",
+    },
+	{
+        src = "https://github.com/lewis6991/gitsigns.nvim",
+        version = "25050e4ed39e628282831d4cbecb1850454ce915",
+    },
+	{
+        src = "https://github.com/sindrets/diffview.nvim",
+        version = "4516612fe98ff56ae0415a259ff6361a89419b0a",
+    },
+	{
+        src = "https://github.com/neovim/nvim-lspconfig",
+        version = "ed19590a3a9792901553c388d1aadafce012f80d",
+    },
+	{
+        src = "https://github.com/mason-org/mason.nvim",
+        version = "2a6940af80375532e5e9e7c1f2fc6319a1b7a69d",
+    },
+	{
+        src = "https://github.com/mason-org/mason-lspconfig.nvim",
+        version = "906c32c8a034dd3d51353d63226bf91aeacd927c",
+    },
+	{
+        src = "https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim",
+        version = "443f1ef8b5e6bf47045cb2217b6f748a223cf7dc",
+    },
+	{
+        src = "https://github.com/seblyng/roslyn.nvim.git",
+        version = "9c5da79216e5776e020dcc6c157983f5352f3f11",
+    },
+	{
+        src = "https://github.com/folke/snacks.nvim",
+        version = "ddd4e76a206c32357af44abb4a60ca98b07c153d",
+    },
+	{
+        src = "https://github.com/nvim-tree/nvim-web-devicons",
+        version = "dfbfaa967a6f7ec50789bead7ef87e336c1fa63c",
+    },
 	{
 		src = "https://github.com/nvim-treesitter/nvim-treesitter",
-		version = "main",
+		version = "4916d6592ede8c07973490d9322f187e07dfefac",
 	},
 	{
 		src = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects",
-		version = "main",
+		version = "851e865342e5a4cb1ae23d31caf6e991e1c99f1e",
 	},
-	"https://github.com/folke/which-key.nvim",
+	{
+        src = "https://github.com/folke/which-key.nvim",
+        version = "3aab2147e74890957785941f0c1ad87d0a44c15a",
+    },
 })

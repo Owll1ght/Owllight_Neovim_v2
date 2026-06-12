@@ -1,26 +1,53 @@
+local is_windows = vim.fn.has("win32") == 1 or vim.fn.has("win64") == 1
+
+local my_formats = {
+	c = { "clang-format" },
+	cpp = { "clang-format" },
+	cs = { "csharpier", "clang-format", stop_after_first = true },
+	lua = { "stylua" },
+	go = { "goimports" },
+	rust = { "rustfmt" },
+	java = { "clang-format" },
+	python = { "black" },
+	json = { "biome", "prettier", stop_after_first = true },
+	markdown = { "prettier" },
+	javascript = { "biome", "prettier", stop_after_first = true },
+	typescript = { "biome", "prettier", stop_after_first = true },
+	javascriptreact = { "biome", "prettier", stop_after_first = true },
+	typescriptreact = { "biome", "prettier", stop_after_first = true },
+	css = { "prettier" },
+	html = { "prettier" },
+	toml = { "taplo" },
+}
+
+local my_windows_overrides = {}
+
+if is_windows then
+	local tools =
+		{ "clang-format", "csharpier", "stylua", "goimports", "rustfmt", "black", "biome", "prettier", "taplo" }
+	local mason_packages = vim.fn.stdpath("data") .. "/mason/packages/"
+
+	for _, fmt in pairs(tools) do
+		local path_root_exe = mason_packages .. fmt .. "/" .. fmt .. ".exe"
+		local path_root = mason_packages .. fmt .. "/" .. fmt
+		local path_bin_exe = mason_packages .. fmt .. "/bin/" .. fmt .. ".exe"
+		local path_bin = mason_packages .. fmt .. "/bin/" .. fmt
+
+		if vim.fn.filereadable(path_root_exe) == 1 then
+			my_windows_overrides[fmt] = { command = path_root_exe }
+		elseif vim.fn.filereadable(path_bin_exe) == 1 then
+			my_windows_overrides[fmt] = { command = path_bin_exe }
+		elseif vim.fn.filereadable(path_root) == 1 then
+			my_windows_overrides[fmt] = { command = path_root }
+		elseif vim.fn.filereadable(path_bin) == 1 then
+			my_windows_overrides[fmt] = { command = path_bin }
+		end
+	end
+end
+
 require("conform").setup({
-	formatters_by_ft = {
-		c = { "clang-format" },
-		cpp = { "clang-format" },
-		cs = { "csharpier", "clang-format", stop_after_first = true },
-		lua = { "stylua" },
-		go = { "goimports" },
-		rust = { "rustfmt" },
-		java = { "clang-format" },
-		python = { "black" },
-		json = { "biome", "prettier", stop_after_first = true },
-		markdown = { "prettier" },
-		javascript = { "biome", "prettier", stop_after_first = true },
-		typescript = { "biome", "prettier", stop_after_first = true },
-		javascriptreact = { "biome", "prettier", stop_after_first = true },
-		typescriptreact = { "biome", "prettier", stop_after_first = true },
-		css = { "prettier" },
-		html = { "prettier" },
-		toml = { "taplo" },
-	},
-	formatters = {
-		biome = { require_cwd = true },
-	},
+	formatters_by_ft = my_formats,
+	formatters = my_windows_overrides,
 	default_format_opts = {
 		lsp_format = "fallback",
 	},
