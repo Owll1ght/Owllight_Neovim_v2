@@ -15,6 +15,7 @@ whichkey.add({
 	{ "<leader>fC", group = "Copy" },
 	{ "<leader>g", group = "git" },
 	{ "<leader>gh", group = "hunks" },
+	{ "<leader>o", group = "Godot" },
 	{ "<leader>q", group = "quit/session" },
 	{ "<leader>s", group = "search" },
 	{ "<leader>t", group = "wrap" },
