@@ -13,7 +13,9 @@ require("plugins")
 require("config.lsp")
 
 if Is_windows then
-	vim.opt.shellslash = false
+	vim.defer_fn(function()
+		vim.opt.shellslash = false
+	end, 5000)
 	print("Running on Windows")
 else
 	print("Running on MacOS or Linux")

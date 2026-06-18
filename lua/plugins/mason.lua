@@ -23,5 +23,8 @@ require("mason-tool-installer").setup({
 		"goimports",
 		"clang-format",
 		"csharpier",
+
+		-- debugger
+		"netcoredbg",
 	},
 })
