@@ -22,7 +22,12 @@ Snacks.setup({
 	zen = { enabled = true },
 
 	picker = {
+		enabled = true,
+		ui_select = true,
 		sources = {
+			select = {
+				focus = "list",
+			},
 			files = {
 				hidden = true,
 				ignored = true,

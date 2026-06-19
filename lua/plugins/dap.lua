@@ -38,17 +38,12 @@ local function init_dap()
 		local current_file_dir = vim.fn.expand("%:p:h")
 		-- Search upward (the ';' means search upward) for any .csproj file
 		local csproj_file = vim.fn.findfile("*.csproj", current_file_dir .. ";")
-		local godotproj_file = vim.fn.findfile("project.godot", current_file_dir .. ";")
 
 		if csproj_file ~= "" then
 			-- If found, return the folder containing the .csproj
 			---@cast csproj_file string
 			return vim.fn.fnamemodify(csproj_file, ":p:h")
-		elseif godotproj_file ~= "" then
-			---@cast godotproj_file string
-			return vim.fn.fnamemodify(godotproj_file, ":p:h")
 		end
-
 		return vim.fn.getcwd()
 	end
 
@@ -75,19 +70,15 @@ local function init_dap()
 		},
 	}
 
-	dap.adapters.netcoredbg = {
+	dap.adapters.mono = {
 		type = "executable",
-		command = normalize_path(Debugger_path),
-		args = { "--interpreter=vscode" },
-		options = {
-			detached = not Is_windows,
-		},
+		command = normalize_path(vim.fn.stdpath("config") .. "/mono-debug/extension/bin/Release/mono-debug.exe"),
 	}
 
 	dap.configurations.cs = {
 
 		-- ********************************************************************************
-		-- 1. Standard C# / .NET Debugger
+		-- Standard C# / .NET Debugger
 		-- ********************************************************************************
 
 		{
@@ -142,38 +133,30 @@ local function init_dap()
 		},
 
 		-- ********************************************************************************
-		-- 2. Godot C# Debugger
+		-- Godot 3.6 C# Debugger - Attach
 		-- ********************************************************************************
 
 		{
-			type = "coreclr",
-			name = "Godot - Launch Game",
-			request = "launch",
-			cwd = function()
-				return vim.fn.fnamemodify(get_project_root(), ":p")
-			end,
-			program = function()
-				local godot_path = vim.fn.exepath("godot")
-				if godot_path == "" then
-					godot_path = vim.fn.input("Path to Godot executable: ", "", "file")
-				end
-				return normalize_path(godot_path)
-			end,
-			args = function()
-				local root = vim.fn.fnamemodify(get_project_root(), ":p")
-				return { "--path", root }
-			end,
+			type = "mono",
+			name = "Godot 3.6 - Attach to Mono",
+			request = "attach",
+			address = "127.0.0.1",
+			port = 23685,
+			justMyCode = true,
 		},
 
 		-- ********************************************************************************
-		-- 3. Godot C# Debugger - Attach (Bonus & Highly Recommended)
+		-- Godot 3.6 C# Debugger - Attach (Stop At Entry)
 		-- ********************************************************************************
 
 		{
-			type = "coreclr",
-			name = "Godot - Attach to Process",
+			type = "mono",
+			name = "Godot 3.6 - Attach to Mono (Stop at Entry)",
+			stopAtEntry = true,
+			justMyCode = true,
 			request = "attach",
-			processId = require("dap.ui").pick_process,
+			address = "127.0.0.1",
+			port = 23685,
 		},
 	}
 
