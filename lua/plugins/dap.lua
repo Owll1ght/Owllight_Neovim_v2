@@ -85,6 +85,11 @@ local function init_dap()
 	}
 
 	dap.configurations.cs = {
+
+		-- ********************************************************************************
+		-- 1. Standard C# / .NET Debugger
+		-- ********************************************************************************
+
 		{
 			type = "coreclr",
 			name = "launch - netcoredbg",
@@ -134,6 +139,41 @@ local function init_dap()
 				-- Ensure the final .dll path is normalized
 				return normalize_path(target_path)
 			end,
+		},
+
+		-- ********************************************************************************
+		-- 2. Godot C# Debugger
+		-- ********************************************************************************
+
+		{
+			type = "coreclr",
+			name = "Godot - Launch Game",
+			request = "launch",
+			cwd = function()
+				return vim.fn.fnamemodify(get_project_root(), ":p")
+			end,
+			program = function()
+				local godot_path = vim.fn.exepath("godot")
+				if godot_path == "" then
+					godot_path = vim.fn.input("Path to Godot executable: ", "", "file")
+				end
+				return normalize_path(godot_path)
+			end,
+			args = function()
+				local root = vim.fn.fnamemodify(get_project_root(), ":p")
+				return { "--path", root }
+			end,
+		},
+
+		-- ********************************************************************************
+		-- 3. Godot C# Debugger - Attach (Bonus & Highly Recommended)
+		-- ********************************************************************************
+
+		{
+			type = "coreclr",
+			name = "Godot - Attach to Process",
+			request = "attach",
+			processId = require("dap.ui").pick_process,
 		},
 	}
 
