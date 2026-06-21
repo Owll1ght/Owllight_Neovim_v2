@@ -26,5 +26,6 @@ require("mason-tool-installer").setup({
 
 		-- debugger
 		"netcoredbg",
+		"codelldb",
 	},
 })

@@ -16,6 +16,7 @@ if Is_windows then
 	vim.defer_fn(function()
 		vim.opt.shellslash = false
 	end, 5000)
+	vim.o.shell = "powershell"
 	print("Running on Windows")
 else
 	print("Running on MacOS or Linux")

@@ -1,6 +1,6 @@
 local whichkey = require("which-key")
 whichkey.setup({
-	preset = "helix",
+	preset = "classic",
 })
 
 whichkey.add({
@@ -15,6 +15,7 @@ whichkey.add({
 	{ "<leader>fC", group = "Copy" },
 	{ "<leader>g", group = "git" },
 	{ "<leader>gh", group = "hunks" },
+	{ "<leader>j", group = "Filetype FTPlugins" },
 	{ "<leader>o", group = "Godot" },
 	{ "<leader>q", group = "quit/session" },
 	{ "<leader>s", group = "search" },
@@ -76,7 +77,7 @@ whichkey.add({
 		{
 			"<leader>?",
 			function()
-				require("which-key").show({ global = false })
+				require("which-key").show({ global = true })
 			end,
 			desc = "Buffer Keymaps (which-key)",
 		},

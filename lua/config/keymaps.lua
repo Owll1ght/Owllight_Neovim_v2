@@ -117,7 +117,8 @@ map("x", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev Search Result
 map("o", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev Search Result" })
 
 -- Open Up Warning Windows
-map("n", "gb", "<cmd>lua vim.diagnostic.open_float()<cr>", { desc = "Open Warning Float Window" })
+map("n", "<leader>h", "<cmd>lua vim.diagnostic.open_float()<cr>", { desc = "Open Warning Float Window" })
+
 -- ═══════════════════════════════════════════════════════════
 -- SMART TEXT EDITING
 -- ═══════════════════════════════════════════════════════════
@@ -130,22 +131,12 @@ map("v", ">", ">gv")
 map("v", "p", '"_dP', opts)
 
 -- Copy whole file to clipboard
-map("n", "<C-c>", ":%y+<CR>", opts)
+map("n", "<C-c>", ":%y+<CR>", { desc = "Copy Whole file to Clipboard" })
 
 -- Smart undo break-points (create undo points at logical stops)
 map("i", ",", ",<c-g>u")
 map("i", ".", ".<c-g>u")
 map("i", ";", ";<c-g>u")
-
--- Auto-close pairs (simple, no plugin needed)
--- map("i", "`", "``<left>")
--- map("i", '"', '""<left>')
--- map("i", "(", "()<left>")
--- map("i", "[", "[]<left>")
--- map("i", "{", "{}<left>")
--- map("i", "<", "<><left>")
--- Note: Single quotes commented out to avoid conflicts in some contexts
--- map("i", "'", "''<left>")
 
 -- ═══════════════════════════════════════════════════════════
 -- FILE OPERATIONS
@@ -222,6 +213,8 @@ map("n", "<leader><tab><tab>", "<cmd>tabnew<cr>", { desc = "New Tab" })
 map("n", "<leader><tab>]", "<cmd>tabnext<cr>", { desc = "Next Tab" })
 map("n", "<leader><tab>d", "<cmd>tabclose<cr>", { desc = "Close Tab" })
 map("n", "<leader><tab>[", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })
+map({ "i", "n" }, "<C-a>", "<cmd>tabnext<cr>", { desc = "Next Tab" })
+map({ "i", "n" }, "<C-l>", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })
 
 -- ═══════════════════════════════════════════════════════════
 -- FOLDING NAVIGATION (for code organization)
@@ -252,4 +245,11 @@ map("n", "z0", "1z=", { desc = "Fix word under cursor" })
 map("n", "<leader>a", "<cmd>lua vim.pack.update()<CR>")
 
 -- Open Mason UI
-map("n", "<leader>ma", "<cmd>Mason<CR>")
+map("n", "<leader>m", "<cmd>Mason<CR>")
+
+-- ═══════════════════════════════════════════════════════════
+-- FTPLUGIN Keys
+-- ═══════════════════════════════════════════════════════════
+
+-- To know what filetype
+map("n", "<leader>ja", "<cmd>set filetype?<CR>", { desc = "What Filetype?" })
