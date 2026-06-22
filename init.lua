@@ -11,6 +11,7 @@ require("config")
 require("plugins")
 
 require("config.lsp")
+require("dap_configs")
 
 if Is_windows then
 	vim.defer_fn(function()

@@ -202,6 +202,9 @@ map("t", "<C-l>", "<cmd>wincmd l<cr>", { desc = "Go to Right Window" })
 map("t", "<C-/>", "<cmd>close<cr>", { desc = "Hide Terminal" })
 map("t", "<c-_>", "<cmd>close<cr>", { desc = "which_key_ignore" })
 
+-- Terminal Keymaps
+map("n", "<leader>t", "<cmd>split | terminal<CR>", { desc = "Open up Integrated Terminal" })
+
 -- ═══════════════════════════════════════════════════════════
 -- TAB MANAGEMENT (when you need multiple workspaces)
 -- ═══════════════════════════════════════════════════════════
@@ -232,7 +235,7 @@ map("n", "zk", "zckzOzz", { desc = "Close current fold when open. Always open pr
 -- ═══════════════════════════════════════════════════════════
 
 -- Toggle line wrapping
-map("n", "<leader>tw", "<cmd>set wrap!<CR>", { desc = "Toggle Wrap", silent = true })
+map("n", "<leader>iw", "<cmd>set wrap!<CR>", { desc = "Toggle Wrap", silent = true })
 
 -- Fix spelling (picks first suggestion)
 map("n", "z0", "1z=", { desc = "Fix word under cursor" })

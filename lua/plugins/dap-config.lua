@@ -1,4 +1,6 @@
 local _dap_initialized = false
+local dap = require("dap")
+local dapui = require("dapui")
 
 local function init_dap()
 	if _dap_initialized then
@@ -6,9 +8,6 @@ local function init_dap()
 	end
 
 	_dap_initialized = true
-
-	local dap = require("dap")
-	local dapui = require("dapui")
 
 	-- ===============================================================================
 
@@ -137,3 +136,36 @@ maps("n", "<leader>du", function()
 	init_dap()
 	require("dapui").toggle({})
 end, { desc = "DAP UI" })
+
+-- ========================================================================
+-- DAP External Terminal Configurations
+-- ========================================================================
+
+local function set_external_terminal()
+	if vim.fn.executable("wezterm") == 1 then
+		return { command = "wezterm", args = { "start", "--" } }
+	elseif vim.fn.executable("alacritty") == 1 then
+		return { command = "alacritty", args = { "-e" } }
+	elseif vim.fn.executable("kitty") == 1 then
+		return { command = "kitty", args = { "--hold", "-e" } }
+	end
+
+	if Is_windows then
+		if vim.fn.executable("wt.exe") == 1 then
+			return { command = "wt.exe", args = { "--" } }
+		elseif vim.fn.executable("pwsh") == 1 then
+			return { command = "cmd.exe", args = { "/c", "start", "pwsh", "-NoProfile", "-Command" } }
+		elseif vim.fn.executable("powershell") == 1 then
+			return { command = "cmd.exe", args = { "/c", "start", "powershell", "-NoProfile", "-Command" } }
+		else
+			return { command = "cmd.exe", args = { "/c", "start", "cmd.exe", "/c" } }
+		end
+	elseif vim.fn.has("macunix") == 1 or vim.fn.has("mac") == 1 then
+		return { command = "open", args = { "-a", "Terminal.app" } }
+	else
+		return { command = "xterm", args = { "-e" } }
+	end
+end
+
+dap.defaults.fallback.external_terminal = set_external_terminal()
+dap.defaults.fallback.force_external_terminal = true
