@@ -13,6 +13,7 @@ require("mason-tool-installer").setup({
 		"lua_ls",
 		"roslyn",
 		"clangd",
+		"ols",
 
 		-- formatter
 		"stylua",

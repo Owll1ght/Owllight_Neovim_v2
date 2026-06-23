@@ -9,6 +9,7 @@ local my_formats = {
 	rust = { "rustfmt" },
 	java = { "clang-format" },
 	python = { "black" },
+	odin = { "odinfmt" },
 	json = { "biome", "prettier", stop_after_first = true },
 	markdown = { "prettier" },
 	javascript = { "biome", "prettier", stop_after_first = true },

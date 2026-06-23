@@ -216,8 +216,8 @@ map("n", "<leader><tab><tab>", "<cmd>tabnew<cr>", { desc = "New Tab" })
 map("n", "<leader><tab>]", "<cmd>tabnext<cr>", { desc = "Next Tab" })
 map("n", "<leader><tab>d", "<cmd>tabclose<cr>", { desc = "Close Tab" })
 map("n", "<leader><tab>[", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })
-map({ "i", "n" }, "<C-a>", "<cmd>tabnext<cr>", { desc = "Next Tab" })
-map({ "i", "n" }, "<C-l>", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })
+map({ "i", "n" }, "<C-l>", "<cmd>tabnext<cr>", { desc = "Next Tab" })
+map({ "i", "n" }, "<C-a>", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })
 
 -- ═══════════════════════════════════════════════════════════
 -- FOLDING NAVIGATION (for code organization)
