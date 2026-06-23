@@ -25,7 +25,7 @@ local my_windows_overrides = {}
 
 if is_windows then
 	local tools =
-		{ "clang-format", "csharpier", "stylua", "goimports", "rustfmt", "black", "biome", "prettier", "taplo" }
+		{ "odin", "clang-format", "csharpier", "stylua", "goimports", "rustfmt", "black", "biome", "prettier", "taplo" }
 	local mason_packages = vim.fn.stdpath("data") .. "/mason/packages/"
 
 	for _, fmt in pairs(tools) do
