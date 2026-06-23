@@ -46,3 +46,4 @@ local map = vim.keymap.set
 map("n", "<leader>ld", "<cmd>colorscheme kanagawa-dragon<cr>", { desc = "Kanagawa Dragon Colorscheme" })
 map("n", "<leader>lw", "<cmd>colorscheme kanagawa-wave<cr>", { desc = "Kanagawa Wave Colorscheme" })
 map("n", "<leader>ll", "<cmd>colorscheme kanagawa-lotus<cr>", { desc = "Kanagawa Lotus Colorscheme" })
+map("n", "<leader>lf", "<cmd>echo g:colors_name<CR>", { desc = "What's the Colorscheme?" })
