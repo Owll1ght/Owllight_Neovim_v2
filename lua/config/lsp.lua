@@ -60,6 +60,7 @@ vim.lsp.enable({
 	"clangd",
 	"gdscript",
 	"ols",
+	"biome",
 })
 
 -- Load Lsp on-demand, e.g: eslint is disable by default

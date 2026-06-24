@@ -1,0 +1,11 @@
+{
+    "name": "odin-snippets",
+    "contributes": {
+        "snippets": [
+            {
+                "language": "odin",
+                "path": "./odin.json"
+            }
+        ]
+    }
+}

@@ -1,0 +1,71 @@
+{
+    "If Statement": {
+        "prefix": "if_statement",
+        "body": ["if ${1:condition} {", "\t$0", "}"],
+        "description": "if block"
+    },
+    "For Loop (Iterator)": {
+        "prefix": "for_in_iterator",
+        "body": ["for ${1:val} in ${2:iterator} {", "\t$0", "}"],
+        "description": "for in loop"
+    },
+    "For Loop (C-Style)": {
+        "prefix": "for_like_c",
+        "body": ["for ${1:init}; ${2:condition}; ${3:post} {", "\t$0", "}"],
+        "description": "Standard C-Style for loop"
+    },
+    "Procedure Definition": {
+        "prefix": "proc_def",
+        "body": [
+            "${1:name} :: proc(${2:args}) ${3:-> ${4:return_type}} {",
+            "\t$0",
+            "}"
+        ],
+        "description": "Procedure definition block"
+    },
+    "Switch Statement": {
+        "prefix": "switch_state",
+        "body": ["switch ${1:variable} {", "case ${2:value}:", "\t$0", "}"],
+        "description": "Standard switch statement"
+    },
+    "Case in Switch Statement": {
+        "preifx": "case_state",
+        "body": ["case ${1:value}:", "\t$0"],
+        "description": "Case inside of switch"
+    },
+    "Partial Switch (Enums)": {
+        "prefix": "switch_partial_enum",
+        "body": [
+            "#partial switch ${1:enum_variable} {",
+            "case .${2:Variant}:",
+            "\t$0",
+            "}"
+        ],
+        "description": "Switch that allows omitting enum variants safely"
+    },
+    "Defer Block": {
+        "prefix": "defer_free",
+        "body": ["defer ${1:free}(${2:ptr})"],
+        "description": "Defer execution of an expression until scope exit"
+    },
+    "Defer Delete (Slices/Dynamic Arrays)": {
+        "prefix": "defer_delete",
+        "body": ["defer delete(${1:array})"],
+        "description": "Defer deletion of a dynamic array or slice allocator"
+    },
+    "Struct Definition": {
+        "prefix": "struct_def",
+        "body": [
+            "${1:name} :: struct {",
+            "\t${2:field}: ${3:type},",
+            "\t$0",
+            "}"
+        ],
+        "description": "Define a structured data type"
+    },
+    "Enum Definition": {
+        "prefix": "enum_def",
+        "body": ["${1:name} :: enum {", "\t${2:Variant_One},", "\t$0", "}"],
+        "description": "Define a strongly-typed enumeration"
+    }
+}

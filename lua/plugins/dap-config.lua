@@ -53,6 +53,10 @@ maps("n", "<leader>db", function()
 	require("dap").toggle_breakpoint()
 end, { desc = "Toggle Breakpoint" })
 
+maps("n", "<leader>dD", function()
+	require("dap").clear_breakpoints()
+end, { desc = "Clear all Breakpoints" })
+
 maps("n", "<leader>dB", function()
 	init_dap()
 	require("dap").list_breakpoints()
