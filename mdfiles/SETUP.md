@@ -15,7 +15,7 @@ What to install for everyday usage :
 
 In Fedora :
 sudo dnf install git gcc fd ripgrep tree-sitter-cli dotnet-sdk-10.0 cargo clang go luarocks rustfmt
-sudo cargo install tree-sitter-cli
+cargo install tree-sitter-cli
 
 Additional Download for minimizing warnings and errors in :checkhealth :
 
@@ -24,6 +24,17 @@ sudo dnf install magick ruby gem java javac julia php composer python3-pip pytho
 sudo dnf copr enable dejan/lazygit
 sudo dnf install lazygit
 
+In Ubuntu :
+sudo apt install git gcc fd-find ripgrep dotnet-sdk-10.0 cargo clang golang-go luarocks rustfmt nodejs npm
+cargo install tree-sitter-cli
+
+sudo apt install imagemagick ruby gem default-jdk php composer python3 pipx gnome-shell-extensions texlive-latex-base sqlite3
+
+go install github.com/jesseduffield/lazygit@latest
+
+curl -fsSL https://install.julialang.org | sh
+
+Additionals :
 pip install mmdc
 pip3 install --user --upgrade pynvim
 
