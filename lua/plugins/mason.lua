@@ -14,6 +14,7 @@ require("mason-tool-installer").setup({
 		"roslyn",
 		"clangd",
 		"ols",
+		"basedpyright",
 
 		-- formatter
 		"stylua",

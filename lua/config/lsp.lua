@@ -61,6 +61,7 @@ vim.lsp.enable({
 	"gdscript",
 	"ols",
 	"biome",
+	"basedpyright",
 })
 
 -- Load Lsp on-demand, e.g: eslint is disable by default
