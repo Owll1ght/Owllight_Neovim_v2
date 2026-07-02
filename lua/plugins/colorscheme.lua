@@ -1,10 +1,40 @@
-require("kanagawa").setup({
-	transparaent = true,
-	theme = "wave",
-	background = {
-		dark = "wave",
-		light = "wave",
+require("rose-pine").setup({
+	dim_inactive_windows = false,
+	enable = {
+		terminal = true,
+		legacy_hightlights = true,
 	},
+	styles = {
+		bold = true,
+		italic = true,
+		transparency = true,
+	},
+})
+
+require("cyberdream").setup({
+	default = false,
+	base = true,
+	transparent = true,
+	italic_comments = true,
+	extensions = {
+		telescope = true,
+		notify = true,
+	},
+	colors = {
+		light = {
+			fg = "#00ffcc",
+			blue = "#3a5efc",
+		},
+	},
+})
+
+require("kanagawa").setup({
+	transparent = true,
+	-- theme = "wave",
+	-- background = {
+	-- 	dark = "wave",
+	-- 	light = "wave",
+	-- },
 })
 
 local theme_file = vim.fn.stdpath("data") .. "/current_theme.txt"

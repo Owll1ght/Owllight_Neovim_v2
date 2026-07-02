@@ -16,11 +16,7 @@
     },
     "Procedure Definition": {
         "prefix": "proc_def",
-        "body": [
-            "${1:name} :: proc(${2:args}) ${3:-> ${4:return_type}} {",
-            "\t$0",
-            "}"
-        ],
+        "body": ["${1:name} :: proc(${2:args}) {", "\t$0", "}"],
         "description": "Procedure definition block"
     },
     "Switch Statement": {

@@ -10,6 +10,11 @@
       "src": "https://github.com/stevearc/conform.nvim",
       "version": "'619363c30309d29ffa631e67c8183f2a72caa373'"
     },
+    "cyberdream.nvim": {
+      "rev": "b9cc88378b776f33d3ea77164716f37c3f13ef72",
+      "src": "https://github.com/scottmckendry/cyberdream.nvim",
+      "version": "'b9cc88378b776f33d3ea77164716f37c3f13ef72'"
+    },
     "diffview.nvim": {
       "rev": "4516612fe98ff56ae0415a259ff6361a89419b0a",
       "src": "https://github.com/sindrets/diffview.nvim",
@@ -89,6 +94,11 @@
       "rev": "dfbfaa967a6f7ec50789bead7ef87e336c1fa63c",
       "src": "https://github.com/nvim-tree/nvim-web-devicons",
       "version": "'dfbfaa967a6f7ec50789bead7ef87e336c1fa63c'"
+    },
+    "rose-pine": {
+      "rev": "ff483051a47e27d84bdef47703538df1ed9f4a47",
+      "src": "https://github.com/rose-pine/neovim",
+      "version": "'ff483051a47e27d84bdef47703538df1ed9f4a47'"
     },
     "roslyn.nvim": {
       "rev": "9c5da79216e5776e020dcc6c157983f5352f3f11",
