@@ -53,6 +53,14 @@ vim.api.nvim_create_autocmd("LspAttach", {
 -- local ts_server = vim.g.lsp_typescript_server or "vtsls"
 
 vim.lsp.config("gdscript", {})
+vim.lsp.config("jsonls", {
+	settings = {
+		json = {
+			schemas = require("schemastore").json.schemas(),
+			validate = { enable = true },
+		},
+	},
+})
 
 -- Enable LSP servers for Neovim 0.11+
 vim.lsp.enable({
@@ -60,8 +68,9 @@ vim.lsp.enable({
 	"clangd",
 	"gdscript",
 	"ols",
-	"biome",
+	-- "biome",
 	"basedpyright",
+	"jsonls",
 })
 
 -- Load Lsp on-demand, e.g: eslint is disable by default

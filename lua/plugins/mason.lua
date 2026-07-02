@@ -15,6 +15,7 @@ require("mason-tool-installer").setup({
 		"clangd",
 		"ols",
 		"basedpyright",
+		"jsonls",
 
 		-- formatter
 		"stylua",

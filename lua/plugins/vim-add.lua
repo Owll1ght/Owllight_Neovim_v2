@@ -92,4 +92,8 @@ vim.pack.add({
 		src = "https://github.com/scottmckendry/cyberdream.nvim",
 		version = "b9cc88378b776f33d3ea77164716f37c3f13ef72",
 	},
+	{
+		src = "https://github.com/b0o/SchemaStore.nvim",
+		version = "6ff1f21b2e2b77ec59f7433ce2d9fbc052d908ac",
+	},
 })
