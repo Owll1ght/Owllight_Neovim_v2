@@ -36,6 +36,10 @@ vim.api.nvim_create_autocmd("FileType", {
 	pattern = { "man" },
 	callback = function(event)
 		vim.bo[event.buf].buflisted = false
+		vim.opt_local.number = true
+		vim.opt_local.relativenumber = true
+		vim.opt_local.signcolumn = "no"
+		vim.opt_local.colorcolumn = ""
 	end,
 })
 

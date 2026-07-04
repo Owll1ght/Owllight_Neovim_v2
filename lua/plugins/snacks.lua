@@ -21,6 +21,15 @@ Snacks.setup({
 	words = { enabled = false },
 	zen = { enabled = true },
 
+	styles = {
+		notification_history = {
+			wo = {
+				wrap = true,
+				linebreak = true,
+			},
+		},
+	},
+
 	picker = {
 		enabled = true,
 		ui_select = true,
