@@ -96,4 +96,20 @@ vim.pack.add({
 		src = "https://github.com/b0o/SchemaStore.nvim",
 		version = "6ff1f21b2e2b77ec59f7433ce2d9fbc052d908ac",
 	},
+	{
+		src = "https://github.com/folke/tokyonight.nvim",
+		version = "cdc07ac78467a233fd62c493de29a17e0cf2b2b6",
+	},
+	{
+		src = "https://github.com/sainnhe/everforest",
+		version = "85a86eb62409e3ec88713bff3d1b9d7374e112e4",
+	},
+	{
+		src = "https://github.com/morhetz/gruvbox",
+		version = "5d15b2765f59754d7ac263c88a0f6e3e58124951",
+	},
+	{
+		src = "https://github.com/shaunsingh/moonlight.nvim",
+		version = "e24e4218ec680b6396532808abf57ca0ada82e66",
+	},
 })

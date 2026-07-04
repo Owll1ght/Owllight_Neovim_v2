@@ -37,6 +37,18 @@ require("kanagawa").setup({
 	-- },
 })
 
+require("tokyonight").setup({
+	transparent = true,
+	terminal_colors = true,
+})
+
+vim.g.everforest_transparent_background = 2
+vim.g.gruvbox_transparent_bg = 1
+vim.g.gruvbox_contrast_dark = "hard"
+vim.g.gruvbox_termcolors = 16
+vim.g.moonlight_contrast = true
+vim.g.moonlight_disable_background = true
+
 local theme_file = vim.fn.stdpath("data") .. "/current_theme.txt"
 
 local function load_saved_theme()
@@ -77,3 +89,40 @@ map("n", "<leader>ld", "<cmd>colorscheme kanagawa-dragon<cr>", { desc = "Kanagaw
 map("n", "<leader>lw", "<cmd>colorscheme kanagawa-wave<cr>", { desc = "Kanagawa Wave Colorscheme" })
 map("n", "<leader>ll", "<cmd>colorscheme kanagawa-lotus<cr>", { desc = "Kanagawa Lotus Colorscheme" })
 map("n", "<leader>lf", "<cmd>echo g:colors_name<CR>", { desc = "What's the Colorscheme?" })
+
+vim.api.nvim_set_hl(0, "Normal", { bg = "None" })
+vim.api.nvim_set_hl(0, "NormalFloat", { bg = "None" })
+vim.api.nvim_set_hl(0, "FloatBorder", { bg = "None" })
+vim.api.nvim_set_hl(0, "SnacksNormal", { bg = "None" })
+vim.api.nvim_set_hl(0, "SnacksNormalNC", { bg = "None" })
+
+local function transparent_bg()
+	vim.cmd([[
+    highlight Normal guibg=NONE ctermbg=NONE
+    highlight NormalNC guibg=NONE ctermbg=NONE
+    highlight NormalFloat guibg=NONE ctermbg=NONE
+    highlight FloatBorder guibg=NONE ctermbg=NONE
+    highlight SignColumn guibg=NONE ctermbg=NONE
+    highlight LineNr guibg=NONE ctermbg=NONE
+    highlight CursorLineNr guibg=NONE ctermbg=NONE
+    highlight EndOfBuffer guibg=NONE ctermbg=NONE
+    highlight MsgArea guibg=NONE ctermbg=NONE
+    highlight Pmenu guibg=NONE ctermbg=NONE
+    highlight PmenuSel guibg=NONE ctermbg=NONE
+    highlight TabLine guibg=NONE ctermbg=NONE
+    highlight TabLineFill guibg=NONE ctermbg=NONE
+    highlight StatusLine guibg=NONE ctermbg=NONE
+    highlight StatusLineNC guibg=NONE ctermbg=NONE
+    highlight WinSeparator guibg=NONE ctermbg=NONE
+    highlight vertSplit guibg=NONE ctermbg=NONE
+    highlight SnacksNormal guibg=NONE ctermbg=NONE
+    highlight SnacksNormalNC guibg=NONE ctermbg=NONE
+    ]])
+end
+
+transparent_bg()
+
+vim.api.nvim_create_autocmd("ColorScheme", {
+	pattern = "*",
+	callback = transparent_bg,
+})
