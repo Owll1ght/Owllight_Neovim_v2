@@ -67,7 +67,6 @@ vim.lsp.enable({
 	"lua_ls",
 	"clangd",
 	"gdscript",
-	"ols",
 	-- "biome",
 	"basedpyright",
 	"jsonls",

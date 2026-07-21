@@ -13,6 +13,7 @@ require("config")
 require("plugins")
 
 require("config.lsp")
+require("lsp.ols").setup()
 require("dap_configs")
 
 if Is_windows then
